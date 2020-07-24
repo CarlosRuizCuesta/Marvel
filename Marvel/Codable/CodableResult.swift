@@ -21,4 +21,20 @@ class CodableResult : Codable {
     var events : CodableAppearance!
     var resourceURI : String!
     var urls : [CodableUrl]!
+    
+    func toModel() -> Hero {
+        var hero = Hero()
+        
+        hero.id = self.id
+        hero.name = self.name
+        hero.description = self.description
+        hero.modified = self.modified
+        hero.comics = self.comics.toModel()
+        hero.series = self.series.toModel()
+        hero.stories = self.stories.toModel()
+        hero.events = self.events.toModel()
+        hero.resourceURI = self.resourceURI
+        
+        return hero
+    }
 }

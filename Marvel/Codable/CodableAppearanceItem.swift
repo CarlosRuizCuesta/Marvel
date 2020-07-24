@@ -12,4 +12,13 @@ import Foundation
 class CodableAppearanceItem : Codable {
     var resourceURI : String!
     var name : String!
+    
+    func toModel() -> AppearanceItem {
+        let appearanceItem = AppearanceItem()
+        
+        appearanceItem.resourceURI = self.resourceURI
+        appearanceItem.name = self.name
+        
+        return appearanceItem
+    }
 }

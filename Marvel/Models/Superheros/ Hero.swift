@@ -10,5 +10,15 @@ import Foundation
 
 
 class Hero {
-    
+    var id : Int!
+    var name : String!
+    var description : String!
+    var modified : String!
+    var image : String!
+    var comics : Appearance!
+    var series : Appearance!
+    var stories : Appearance!
+    var events : Appearance!
+    var resourceURI : String!
+    var url : Url!
 }

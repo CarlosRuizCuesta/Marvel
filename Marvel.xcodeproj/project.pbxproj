@@ -23,6 +23,9 @@
 		0546D04724CB2ABA00A6DB63 /* CodableAppearanceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546D04624CB2ABA00A6DB63 /* CodableAppearanceItem.swift */; };
 		0546D04924CB312D00A6DB63 /* CodableThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546D04824CB312D00A6DB63 /* CodableThumbnail.swift */; };
 		0546D04C24CB32D900A6DB63 /*  Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546D04B24CB32D900A6DB63 /*  Hero.swift */; };
+		0546D04E24CB342800A6DB63 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546D04D24CB342800A6DB63 /* Appearance.swift */; };
+		0546D05024CB346400A6DB63 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546D04F24CB346400A6DB63 /* Url.swift */; };
+		0546D05224CB34A300A6DB63 /* AppearanceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546D05124CB34A300A6DB63 /* AppearanceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		0546D04624CB2ABA00A6DB63 /* CodableAppearanceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableAppearanceItem.swift; sourceTree = "<group>"; };
 		0546D04824CB312D00A6DB63 /* CodableThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableThumbnail.swift; sourceTree = "<group>"; };
 		0546D04B24CB32D900A6DB63 /*  Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Hero.swift"; sourceTree = "<group>"; };
+		0546D04D24CB342800A6DB63 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		0546D04F24CB346400A6DB63 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
+		0546D05124CB34A300A6DB63 /* AppearanceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				0546D04B24CB32D900A6DB63 /*  Hero.swift */,
+				0546D04D24CB342800A6DB63 /* Appearance.swift */,
+				0546D04F24CB346400A6DB63 /* Url.swift */,
+				0546D05124CB34A300A6DB63 /* AppearanceItem.swift */,
 			);
 			path = Superheros;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 				0546D03B24CB1D1400A6DB63 /* MarvelApiHeroes.swift in Sources */,
 				0546D04924CB312D00A6DB63 /* CodableThumbnail.swift in Sources */,
 				0546D04124CB244B00A6DB63 /* CodableResult.swift in Sources */,
+				0546D05024CB346400A6DB63 /* Url.swift in Sources */,
 				0546D04524CB29BC00A6DB63 /* CodableAppearance.swift in Sources */,
 				0546D03924CB1CBE00A6DB63 /* Extensions.swift in Sources */,
 				0546D04324CB285C00A6DB63 /* CodableUrl.swift in Sources */,
@@ -235,7 +245,9 @@
 				0546D03624CB1C8900A6DB63 /* MarvelApi.swift in Sources */,
 				0546CFEA24CAECF700A6DB63 /* AppDelegate.swift in Sources */,
 				0546D04724CB2ABA00A6DB63 /* CodableAppearanceItem.swift in Sources */,
+				0546D04E24CB342800A6DB63 /* Appearance.swift in Sources */,
 				0546D04C24CB32D900A6DB63 /*  Hero.swift in Sources */,
+				0546D05224CB34A300A6DB63 /* AppearanceItem.swift in Sources */,
 				0546D00124CAFFFF00A6DB63 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

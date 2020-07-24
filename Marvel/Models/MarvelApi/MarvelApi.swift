@@ -49,6 +49,7 @@ class MarvelApi {
             
             do {
                 let response = try JSONDecoder().decode(CodableApiRequest.self, from: data)
+                let hero = response.data.results[0].toModel()
                 print("Response")
             } catch _ as NSError {
                 print("Error")
