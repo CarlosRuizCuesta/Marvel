@@ -14,8 +14,8 @@ class MarvelApiHeroes : MarvelApi {
         
         var name : String!
         
-        init(name : String) {
-            super.init(url : MarvelApiHeroes.URL)
+        init(delegate : MarvelApiResponse, name : String) {
+            super.init(delegate : delegate, url : MarvelApiHeroes.URL)
             self.name = name
             super.url?.queryItems?.append(
                 URLQueryItem(name: MarvelApiHeroes.PARAM_NAME, value: self.name)

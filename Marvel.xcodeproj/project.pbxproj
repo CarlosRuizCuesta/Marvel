@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0541CA3424CB6A7100F90DF9 /* MarvelApiAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541CA3324CB6A7100F90DF9 /* MarvelApiAppearance.swift */; };
+		0541CA3724CB796C00F90DF9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541CA3624CB796C00F90DF9 /* Protocols.swift */; };
 		0546CFEA24CAECF700A6DB63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546CFE924CAECF700A6DB63 /* AppDelegate.swift */; };
 		0546CFF324CAECFE00A6DB63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0546CFF224CAECFE00A6DB63 /* Assets.xcassets */; };
 		0546CFF624CAECFE00A6DB63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0546CFF424CAECFE00A6DB63 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		0541CA3324CB6A7100F90DF9 /* MarvelApiAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiAppearance.swift; sourceTree = "<group>"; };
+		0541CA3624CB796C00F90DF9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		0546CFE624CAECF700A6DB63 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0546CFE924CAECF700A6DB63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0546CFF224CAECFE00A6DB63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0541CA3524CB795200F90DF9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0541CA3624CB796C00F90DF9 /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		0546CFDD24CAECF700A6DB63 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		0546CFE824CAECF700A6DB63 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				0541CA3524CB795200F90DF9 /* Protocols */,
 				0546D00424CB006900A6DB63 /* Codable */,
 				0546D00324CB005A00A6DB63 /* Models */,
 				0546CFFD24CAFEF300A6DB63 /* ViewController */,
@@ -239,6 +250,7 @@
 				0546D03F24CB23F600A6DB63 /* CodableData.swift in Sources */,
 				0546D03B24CB1D1400A6DB63 /* MarvelApiHeroes.swift in Sources */,
 				0546D04924CB312D00A6DB63 /* CodableThumbnail.swift in Sources */,
+				0541CA3724CB796C00F90DF9 /* Protocols.swift in Sources */,
 				0546D04124CB244B00A6DB63 /* CodableResult.swift in Sources */,
 				0546D05024CB346400A6DB63 /* Url.swift in Sources */,
 				0546D04524CB29BC00A6DB63 /* CodableAppearance.swift in Sources */,

@@ -15,10 +15,13 @@ class MarvelApi {
     static var PRIVATEKEY = "4258912c1a09fef3bc3e4c95039964c820727f63"
     static var TS = NSDate()
     static var HASH = MarvelApi.TS.timestamp + MarvelApi.PRIVATEKEY + MarvelApi.PUBLICKEY
-    var url : URLComponents!
     
-    init(url : String) {
+    var url : URLComponents!
+    var delegate : MarvelApiResponse!
+    
+    init(delegate : MarvelApiResponse, url : String) {
         
+        self.delegate = delegate
         self.url = URLComponents(string: url)
         self.url?.queryItems = [
             URLQueryItem(name: MarvelApi.PARAM_KEY, value: MarvelApi.PUBLICKEY),
@@ -50,9 +53,9 @@ class MarvelApi {
             do {
                 let response = try JSONDecoder().decode(CodableApiRequest.self, from: data)
                 let hero = response.data.results[0].toModel()
-                print("Response")
+                self.delegate.response(hero: hero)
             } catch _ as NSError {
-                print("Error")
+                self.delegate.error()
             }
         }
         

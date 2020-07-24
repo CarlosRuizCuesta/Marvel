@@ -18,7 +18,8 @@ class MainViewController: UIViewController {
 
         button.addTarget(self, action: #selector(click_button), for: .touchUpInside)
         
-        MarvelApiHeroes(name: "iron man").start()
+        MarvelApiHeroes(delegate: self, name: "iron man").start()
+        //MarvelApiAppearance(delegate : self, id: "43495").start()
         // Do any additional setup after loading the view.
     }
     
@@ -26,9 +27,21 @@ class MainViewController: UIViewController {
         
         if let nombre = textField.text {
             if !nombre.isEmpty {
-                MarvelApiHeroes(name: nombre).start()
+                MarvelApiHeroes(delegate: self, name: nombre).start()
             }
         }
         
+    }
+}
+
+
+extension MainViewController : MarvelApiResponse {
+    
+    func response(hero: Hero) {
+        print("fdsafdasf")
+    }
+    
+    func error() {
+        print("fdsafdasf")
     }
 }
