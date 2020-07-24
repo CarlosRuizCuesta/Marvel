@@ -38,10 +38,17 @@ class MainViewController: UIViewController {
 extension MainViewController : MarvelApiResponse {
     
     func response(hero: Hero) {
-        print("fdsafdasf")
+        
+        if let comics = hero.comics {
+            let comic = comics.items[0]
+            
+            if let resourceURI = comic.resourceURI {
+                MarvelApiAppearance(delegate: self, url : resourceURI).start()
+            }
+        }
     }
     
-    func error() {
+    func error(error : String) {
         print("fdsafdasf")
     }
 }

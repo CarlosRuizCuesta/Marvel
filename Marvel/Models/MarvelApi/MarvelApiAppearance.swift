@@ -10,12 +10,13 @@ import Foundation
 
 
 class MarvelApiAppearance : MarvelApi {
-    static var URL : String = "https://gateway.marvel.com:443/v1/public/comics/"
+    var urlProtocol : String!
     
-    var id : String!
-    
-    init(delegate : MarvelApiResponse, id : String) {
-        super.init(delegate : delegate, url : MarvelApiAppearance.URL + id)
+    override init(delegate : MarvelApiResponse, url : String) {
+        self.urlProtocol = url
+        self.urlProtocol.insert(contentsOf: "s", at: self.urlProtocol.lastIndexOf("://")!)
+        self.urlProtocol.insert(contentsOf: ":443", at: self.urlProtocol.lastIndexOf("/v1")!)
+        super.init(delegate : delegate, url : self.urlProtocol) //"https://gateway.marvel.com:443/v1/public/comics/43495"
     }
     
 }
