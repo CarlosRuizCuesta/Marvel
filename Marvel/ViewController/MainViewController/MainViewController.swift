@@ -9,10 +9,24 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    @IBOutlet weak var textField : UITextField!
+    @IBOutlet weak var button : UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        button.addTarget(self, action: #selector(click_button), for: .touchUpInside)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func click_button(sender : UIButton) {
+        
+        if let nombre = textField.text {
+            if !nombre.isEmpty {
+                MarvelApiHeroes(name: "iron man").start()
+            }
+        }
+        
     }
 }
