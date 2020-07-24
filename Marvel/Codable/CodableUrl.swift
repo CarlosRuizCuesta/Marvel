@@ -1,5 +1,5 @@
 //
-//  Thumbnail.swift
+//  UrlsCodable.swift
 //  Marvel
 //
 //  Created by MIGUEL PEREZ SUBIAS on 24/07/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-
-class Thumbnail : Codable  {
-    var path : String!
+class CodableUrl : Codable {
+    var type : String!
+    var url : String!
 }

@@ -1,5 +1,5 @@
 //
-//  AppearanceItem.swift
+//  Appearances.swift
 //  Marvel
 //
 //  Created by MIGUEL PEREZ SUBIAS on 24/07/2020.
@@ -9,7 +9,8 @@
 import Foundation
 
 
-class AppearanceItem : Codable {
-    var resourceURI : String!
-    var name : String!
+class CodableAppearance : Codable {
+    var available : Int!
+    var collectionURI : String!
+    var items : [CodableAppearanceItem]!
 }

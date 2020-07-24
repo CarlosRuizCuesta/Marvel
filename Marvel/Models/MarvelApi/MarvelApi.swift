@@ -48,7 +48,7 @@ class MarvelApi {
             }
             
             do {
-                let response = try JSONDecoder().decode(ApiRequest.self, from: data)
+                let response = try JSONDecoder().decode(CodableApiRequest.self, from: data)
                 print("Response")
             } catch _ as NSError {
                 print("Error")

@@ -9,16 +9,16 @@
 import Foundation
 
 
-class Result : Codable {
+class CodableResult : Codable {
     var id : Int!
     var name : String!
     var description : String!
     var modified : String!
-    var thumbnail : Thumbnail!
-    var comics : Appearance!
-    var series : Appearance!
-    var stories : Appearance!
-    var events : Appearance!
+    var thumbnail : CodableThumbnail!
+    var comics : CodableAppearance!
+    var series : CodableAppearance!
+    var stories : CodableAppearance!
+    var events : CodableAppearance!
     var resourceURI : String!
-    var urls : [UrlCodable]!
+    var urls : [CodableUrl]!
 }

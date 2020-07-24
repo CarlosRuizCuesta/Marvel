@@ -8,10 +8,10 @@
 
 import Foundation
 
-class DataCodable : Codable {
+class CodableData : Codable {
     var offset : Int!
     var limit : Int!
     var total : Int!
     var count : Int!
-    var results : [Result]!
+    var results : [CodableResult]!
 }
