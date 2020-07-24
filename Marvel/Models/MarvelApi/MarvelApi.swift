@@ -47,8 +47,12 @@ class MarvelApi {
                 return
             }
             
-            
-            print("fin")
+            do {
+                let response = try JSONDecoder().decode(ApiRequest.self, from: data)
+                print("Response")
+            } catch _ as NSError {
+                print("Error")
+            }
         }
         
         task.resume()

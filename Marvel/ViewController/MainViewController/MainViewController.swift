@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         button.addTarget(self, action: #selector(click_button), for: .touchUpInside)
+        
+        MarvelApiHeroes(name: "iron man").start()
         // Do any additional setup after loading the view.
     }
     
@@ -24,7 +26,7 @@ class MainViewController: UIViewController {
         
         if let nombre = textField.text {
             if !nombre.isEmpty {
-                MarvelApiHeroes(name: "iron man").start()
+                MarvelApiHeroes(name: nombre).start()
             }
         }
         
