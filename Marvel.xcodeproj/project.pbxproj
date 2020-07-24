@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0541CA3424CB6A7100F90DF9 /* MarvelApiAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541CA3324CB6A7100F90DF9 /* MarvelApiAppearance.swift */; };
 		0546CFEA24CAECF700A6DB63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546CFE924CAECF700A6DB63 /* AppDelegate.swift */; };
 		0546CFF324CAECFE00A6DB63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0546CFF224CAECFE00A6DB63 /* Assets.xcassets */; };
 		0546CFF624CAECFE00A6DB63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0546CFF424CAECFE00A6DB63 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0541CA3324CB6A7100F90DF9 /* MarvelApiAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiAppearance.swift; sourceTree = "<group>"; };
 		0546CFE624CAECF700A6DB63 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0546CFE924CAECF700A6DB63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0546CFF224CAECFE00A6DB63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				0546D03524CB1C8900A6DB63 /* MarvelApi.swift */,
 				0546D03A24CB1D1400A6DB63 /* MarvelApiHeroes.swift */,
+				0541CA3324CB6A7100F90DF9 /* MarvelApiAppearance.swift */,
 			);
 			path = MarvelApi;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				0546D03924CB1CBE00A6DB63 /* Extensions.swift in Sources */,
 				0546D04324CB285C00A6DB63 /* CodableUrl.swift in Sources */,
 				0546D03D24CB234400A6DB63 /* ApiRequest.swift in Sources */,
+				0541CA3424CB6A7100F90DF9 /* MarvelApiAppearance.swift in Sources */,
 				0546D03624CB1C8900A6DB63 /* MarvelApi.swift in Sources */,
 				0546CFEA24CAECF700A6DB63 /* AppDelegate.swift in Sources */,
 				0546D04724CB2ABA00A6DB63 /* CodableAppearanceItem.swift in Sources */,

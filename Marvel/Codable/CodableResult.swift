@@ -19,8 +19,23 @@ class CodableResult : Codable {
     var series : CodableAppearance!
     var stories : CodableAppearance!
     var events : CodableAppearance!
+    var creators : CodableAppearance!
+    var characters : CodableAppearance!
     var resourceURI : String!
     var urls : [CodableUrl]!
+    var difitalID : Int!
+    var title : String!
+    var issueNumber : Int!
+    var variantDescription : String!
+    var isbn : String!
+    var upc : String!
+    var diamondCode : String!
+    var ean : String!
+    var issn : String!
+    var format : String!
+    var pageCount : Int!
+    
+    
     
     func toModel() -> Hero {
         var hero = Hero()
