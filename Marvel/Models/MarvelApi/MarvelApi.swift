@@ -41,12 +41,12 @@ class MarvelApi {
             guard let data = data,
                 let response = response as? HTTPURLResponse,
                 error == nil else {
-                    
+                    self.delegate.error(error : "Error 2")
                     return
             }
             
             guard (200 ... 299) ~= response.statusCode else {
-                
+                self.delegate.error(error : "Error 2")
                 return
             }
             
@@ -54,8 +54,8 @@ class MarvelApi {
                 let response = try JSONDecoder().decode(CodableApiRequest.self, from: data)
                 let hero = response.data.results[0].toModel()
                 self.delegate.response(hero: hero)
-            } catch _ as NSError {
-                self.delegate.error()
+            } catch let error as NSError {
+                self.delegate.error(error : error.localizedDescription)
             }
         }
         
