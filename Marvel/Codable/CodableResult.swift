@@ -44,10 +44,31 @@ class CodableResult : Codable {
         hero.name = self.name
         hero.description = self.description
         hero.modified = self.modified
-        hero.comics = self.comics.toModel()
-        hero.series = self.series.toModel()
-        hero.stories = self.stories.toModel()
-        hero.events = self.events.toModel()
+        
+        if let comics = self.comics {
+            hero.comics = comics.toModel()
+        }
+        
+        if let series = self.series {
+            hero.series = series.toModel()
+        }
+        
+        if let stories = self.stories {
+            hero.stories = stories.toModel()
+        }
+        
+        if let events = self.events {
+            hero.events = events.toModel()
+        }
+        
+        if let creators = self.creators {
+            hero.creators = creators.toModel()
+        }
+        
+        if let characters = self.characters {
+            hero.characters = characters.toModel()
+        }
+        
         hero.resourceURI = self.resourceURI
         
         return hero

@@ -19,6 +19,8 @@ class Hero {
     var series : Appearance!
     var stories : Appearance!
     var events : Appearance!
+    var creators : Appearance!
+    var characters : Appearance!
     var resourceURI : String!
     var url : Url!
 }
