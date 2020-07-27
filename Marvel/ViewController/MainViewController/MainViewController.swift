@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(click_button), for: .touchUpInside)
         
         MarvelApiHeroes(delegate: self, name: "iron man").start()
-        //MarvelApiAppearance(delegate : self, id: "43495").start()
         // Do any additional setup after loading the view.
     }
     
@@ -38,13 +37,12 @@ class MainViewController: UIViewController {
 extension MainViewController : MarvelApiResponse {
     
     func response(hero: Hero) {
-        
-        if let comics = hero.comics {
-            let comic = comics.items[0]
-            
-            if let resourceURI = comic.resourceURI {
-                MarvelApiAppearance(delegate: self, url : resourceURI).start()
-            }
+        DispatchQueue.main.async {
+            let moreInfoControllerVC = MoreInfoController(nibName: "MoreInfoController", bundle: nil)
+            let navigation  = UINavigationController(rootViewController:moreInfoControllerVC)
+            navigation.modalPresentationStyle = .fullScreen
+            navigation.modalTransitionStyle = .crossDissolve
+            self.present(navigation, animated: true, completion: nil)
         }
     }
     
