@@ -9,9 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreInfoController" customModule="Marvel" customModuleProvider="target">
             <connections>
-                <outlet property="lblTitle" destination="Fr8-0g-j0i" id="c2L-7f-Qbf"/>
-                <outlet property="lbldesc" destination="0HQ-DT-qqG" id="zqm-z0-1UA"/>
-                <outlet property="tblView" destination="l3c-wq-tc5" id="erG-AK-3eL"/>
+                <outlet property="tblAppearance" destination="Fob-fx-DJu" id="d5j-3E-u40"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,32 +18,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr8-0g-j0i">
-                    <rect key="frame" x="20" y="44" width="374" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HQ-DT-qqG">
-                    <rect key="frame" x="20" y="72.5" width="374" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l3c-wq-tc5">
-                    <rect key="frame" x="20" y="101" width="374" height="761"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fob-fx-DJu">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FF8-qB-eax"/>
+                        <outlet property="delegate" destination="-1" id="Exa-Cv-Aoe"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fr8-0g-j0i" secondAttribute="trailing" constant="20" id="4mL-kd-bpK"/>
-                <constraint firstItem="0HQ-DT-qqG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DsK-BU-jbG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0HQ-DT-qqG" secondAttribute="trailing" constant="20" id="LTI-IH-95M"/>
-                <constraint firstItem="Fr8-0g-j0i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vte-K4-XeS"/>
-                <constraint firstItem="Fr8-0g-j0i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aKv-1n-pTS"/>
-                <constraint firstItem="0HQ-DT-qqG" firstAttribute="top" secondItem="Fr8-0g-j0i" secondAttribute="bottom" constant="8" id="nTk-KS-hyx"/>
+                <constraint firstItem="Fob-fx-DJu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Hkg-io-mf6"/>
+                <constraint firstItem="Fob-fx-DJu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ReV-eF-Jvm"/>
+                <constraint firstItem="Fob-fx-DJu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sDR-M3-Zbg"/>
+                <constraint firstItem="Fob-fx-DJu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tmH-Mr-75R"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

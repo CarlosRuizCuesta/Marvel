@@ -23,4 +23,48 @@ class Hero {
     var characters : Appearance!
     var resourceURI : String!
     var url : Url!
+    
+    
+    func sectionAppearance() -> [Appearance] {
+        
+        var sections : [Appearance] = []
+        
+        if let comics = comics {
+            if comics.available > 0 {
+                sections.append(comics)
+            }
+        }
+        
+        if let series = series {
+            if series.available > 0 {
+                sections.append(series)
+            }
+        }
+        
+        if let stories = stories {
+            if stories.available > 0 {
+                sections.append(stories)
+            }
+        }
+        
+        if let events = events {
+            if events.available > 0 {
+                sections.append(events)
+            }
+        }
+        
+        if let creators = creators {
+            if creators.available > 0 {
+                sections.append(creators)
+            }
+        }
+        
+        if let characters = characters {
+            if characters.available > 0 {
+                sections.append(characters)
+            }
+        }
+        
+        return sections
+    }
 }

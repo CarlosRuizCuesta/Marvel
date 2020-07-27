@@ -40,6 +40,7 @@ extension MainViewController : MarvelApiResponse {
         DispatchQueue.main.async {
             let moreInfoControllerVC = MoreInfoController(nibName: "MoreInfoController", bundle: nil)
             let navigation  = UINavigationController(rootViewController:moreInfoControllerVC)
+            moreInfoControllerVC.hero = hero
             navigation.modalPresentationStyle = .fullScreen
             navigation.modalTransitionStyle = .crossDissolve
             self.present(navigation, animated: true, completion: nil)

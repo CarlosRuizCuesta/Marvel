@@ -13,4 +13,10 @@ class Appearance {
     var available : Int!
     var collectionURI : String!
     var items : [AppearanceItem]! = []
+    
+    
+    func getType() -> String {
+        let fullUri = collectionURI.components(separatedBy: "/")
+        return fullUri[fullUri.count-1]
+    }
 }
