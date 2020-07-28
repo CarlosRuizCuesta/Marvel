@@ -41,21 +41,30 @@ class MarvelApi {
             guard let data = data,
                 let response = response as? HTTPURLResponse,
                 error == nil else {
-                    self.delegate.error(error : "Error 2")
+                    let errorDetail = ErrorDetails(errorEnum: .httpurlResponse)
+                    self.delegate.error(error : errorDetail)
                     return
             }
             
             guard (200 ... 299) ~= response.statusCode else {
-                self.delegate.error(error : "Error 2")
+                let errorDetail = ErrorDetails(errorEnum: .statusCode)
+                self.delegate.error(error : errorDetail)
                 return
             }
             
             do {
                 let response = try JSONDecoder().decode(CodableApiRequest.self, from: data)
-                let hero = response.data.results[0].toModel()
-                self.delegate.response(hero: hero)
+                
+                if response.data.results.count > 0 {
+                    let hero = response.data.results[0].toModel()
+                    self.delegate.response(hero: hero)
+                } else {
+                    let errorDetail = ErrorDetails(errorEnum: .zeroResult)
+                    self.delegate.error(error : errorDetail)
+                }
             } catch let error as NSError {
-                self.delegate.error(error : error.localizedDescription)
+                let errorDetail = ErrorDetails(errorEnum: .decoderError)
+                self.delegate.error(error : errorDetail)
             }
         }
         

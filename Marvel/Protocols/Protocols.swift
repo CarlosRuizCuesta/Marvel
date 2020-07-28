@@ -11,5 +11,5 @@ import Foundation
 
 protocol MarvelApiResponse {
     func response(hero : Hero)
-    func error(error : String)
+    func error(error : ErrorDetails)
 }

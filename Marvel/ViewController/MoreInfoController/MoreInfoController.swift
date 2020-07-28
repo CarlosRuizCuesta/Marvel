@@ -17,6 +17,7 @@ class MoreInfoController: UIViewController {
     var barTitle : String!
     var appearance : Appearance!
     var tblData : [AppearanceItem] = []
+    var alert : UIAlertController!
     
     var selectedName : String!
     
@@ -52,6 +53,8 @@ extension MoreInfoController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = self.tblData[indexPath.row]
         selectedName = section.name
+        self.alert = Utils.generateAlertControllerLoading(title: "Cargando")
+        self.present(self.alert, animated: true, completion: nil)
         MarvelApiAppearance(delegate: self, url: section.resourceURI).start()
     }
     
@@ -73,18 +76,25 @@ extension MoreInfoController : UITableViewDataSource, UITableViewDelegate {
 extension MoreInfoController : MarvelApiResponse {
     func response(hero: Hero) {
         DispatchQueue.main.async {
-            let infoController = InfoController(nibName: "InfoController", bundle: nil)
-            let navigation  = UINavigationController(rootViewController:infoController)
-            infoController.hero = hero
-            infoController.barTitle = self.selectedName
-            navigation.modalPresentationStyle = .fullScreen
-            navigation.modalTransitionStyle = .crossDissolve
-            self.present(navigation, animated: true, completion: nil)
+            self.alert.dismiss(animated: true, completion: { () -> Void in
+                 let infoController = InfoController(nibName: "InfoController", bundle: nil)
+                 let navigation  = UINavigationController(rootViewController:infoController)
+                 infoController.hero = hero
+                 infoController.barTitle = self.selectedName
+                 navigation.modalPresentationStyle = .fullScreen
+                 navigation.modalTransitionStyle = .crossDissolve
+                 self.present(navigation, animated: true, completion: nil)
+            })
         }
     }
     
-    func error(error: String) {
-        print("error")
+    func error(error: ErrorDetails) {
+        DispatchQueue.main.async {
+            self.alert.dismiss(animated: true, completion: { () -> Void in
+                let alertController = Utils.generateAlertController(title: "Error", message: error.message)
+                self.present(alertController, animated: true, completion: nil)
+            })
+        }
     }
     
     

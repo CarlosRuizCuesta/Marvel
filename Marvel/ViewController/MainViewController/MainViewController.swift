@@ -13,6 +13,7 @@ import Alamofire
 class MainViewController: UIViewController {
 
     @IBOutlet weak var searchBar : UISearchBar!
+    var alert : UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ extension MainViewController : UISearchBarDelegate {
         
         if let text = searchBar.searchTextField.text {
             if !text.isEmpty {
+                self.alert = Utils.generateAlertControllerLoading(title: "Cargando")
+                self.present(self.alert, animated: true, completion: nil)
                 MarvelApiHeroes(delegate: self, name: text).start()
             }
         }
@@ -37,17 +40,24 @@ extension MainViewController : MarvelApiResponse {
     
     func response(hero: Hero) {
         DispatchQueue.main.async {
-            let infoController = InfoController(nibName: "InfoController", bundle: nil)
-            let navigation  = UINavigationController(rootViewController:infoController)
-            infoController.hero = hero
-            infoController.barTitle = hero.name
-            navigation.modalPresentationStyle = .fullScreen
-            navigation.modalTransitionStyle = .crossDissolve
-            self.present(navigation, animated: true, completion: nil)
+            self.alert.dismiss(animated: true, completion: { () -> Void in
+                 let infoController = InfoController(nibName: "InfoController", bundle: nil)
+                 let navigation  = UINavigationController(rootViewController:infoController)
+                 infoController.hero = hero
+                 infoController.barTitle = hero.name
+                 navigation.modalPresentationStyle = .fullScreen
+                 navigation.modalTransitionStyle = .crossDissolve
+                 self.present(navigation, animated: true, completion: nil)
+            })
         }
     }
     
-    func error(error : String) {
-        print("fdsafdasf")
+    func error(error : ErrorDetails) {
+        DispatchQueue.main.async {
+            self.alert.dismiss(animated: true, completion: { () -> Void in
+                let alertController = Utils.generateAlertController(title: "Error", message: error.message)
+                self.present(alertController, animated: true, completion: nil)
+            })
+        }
     }
 }

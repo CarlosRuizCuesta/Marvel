@@ -11,6 +11,7 @@
 		0541CA3724CB796C00F90DF9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541CA3624CB796C00F90DF9 /* Protocols.swift */; };
 		0541CA3B24CB8EA900F90DF9 /* MoreInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0541CA3924CB8EA900F90DF9 /* MoreInfoController.swift */; };
 		0541CA3C24CB8EA900F90DF9 /* MoreInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0541CA3A24CB8EA900F90DF9 /* MoreInfoController.xib */; };
+		0545ACB224D0768B006611DA /* ErrorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545ACB124D0768B006611DA /* ErrorDetail.swift */; };
 		0546CFEA24CAECF700A6DB63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546CFE924CAECF700A6DB63 /* AppDelegate.swift */; };
 		0546CFF324CAECFE00A6DB63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0546CFF224CAECFE00A6DB63 /* Assets.xcassets */; };
 		0546CFF624CAECFE00A6DB63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0546CFF424CAECFE00A6DB63 /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 		0541CA3624CB796C00F90DF9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		0541CA3924CB8EA900F90DF9 /* MoreInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoController.swift; sourceTree = "<group>"; };
 		0541CA3A24CB8EA900F90DF9 /* MoreInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreInfoController.xib; sourceTree = "<group>"; };
+		0545ACB124D0768B006611DA /* ErrorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetail.swift; sourceTree = "<group>"; };
 		0546CFE624CAECF700A6DB63 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0546CFE924CAECF700A6DB63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0546CFF224CAECFE00A6DB63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				0546D03824CB1CBE00A6DB63 /* Extensions.swift */,
 				0574A59324CF35F000575B06 /* Utils.swift */,
+				0545ACB124D0768B006611DA /* ErrorDetail.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0546D03F24CB23F600A6DB63 /* CodableData.swift in Sources */,
+				0545ACB224D0768B006611DA /* ErrorDetail.swift in Sources */,
 				0546D03B24CB1D1400A6DB63 /* MarvelApiHeroes.swift in Sources */,
 				0574A59824CF573A00575B06 /* InfoController.swift in Sources */,
 				0546D04924CB312D00A6DB63 /* CodableThumbnail.swift in Sources */,
@@ -506,7 +510,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Marvel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,7 +530,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Marvel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
