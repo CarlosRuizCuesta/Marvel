@@ -13,58 +13,80 @@ class MoreInfoController: UIViewController {
     
     @IBOutlet weak var tblAppearance : UITableView!
     
-    var hero : Hero!
-    var sectionsppearance : [Appearance] = []
     
-    let leftBarButtonItem: UIBarButtonItem = {
-        let barButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
-        barButtonItem.tintColor = UIColor.red
-        return barButtonItem
-    }()
+    var barTitle : String!
+    var appearance : Appearance!
+    var tblData : [AppearanceItem] = []
+    
+    var selectedName : String!
     
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
-        self.title = hero.name
-        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        self.title = barTitle
+        addBackButton()
         setupData()
     }
     
     func setupData() {
-        sectionsppearance = hero.sectionAppearance()
+        tblData = appearance.items
         tblAppearance.delegate = self
+    }
+    
+    func addBackButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back.png"), for: .normal)
+        backButton.setTitleColor(backButton.tintColor, for: .normal)
+        backButton.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    
+    @IBAction func backAction(_ sender: UIButton) {
+       dismiss(animated: true, completion: nil)
     }
 }
 
 extension MoreInfoController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let section = self.sectionsppearance[indexPath.section]
-        let hero = section.items[indexPath.row]
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionsppearance.count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = self.sectionsppearance[section]
-        return section.getType()
+        let section = self.tblData[indexPath.row]
+        selectedName = section.name
+        MarvelApiAppearance(delegate: self, url: section.resourceURI).start()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = self.sectionsppearance[section]
-        return section.items.count
+        return tblData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "mycell")
         
-        let section = self.sectionsppearance[indexPath.section]
-        let hero = section.items[indexPath.row]
-        
-        cell.textLabel?.text  = hero.name
+        let section = self.tblData[indexPath.row]
+
+        cell.textLabel?.text  = section.name
         
          return cell
     }
 }
+
+extension MoreInfoController : MarvelApiResponse {
+    func response(hero: Hero) {
+        DispatchQueue.main.async {
+            let infoController = InfoController(nibName: "InfoController", bundle: nil)
+            let navigation  = UINavigationController(rootViewController:infoController)
+            infoController.hero = hero
+            infoController.barTitle = self.selectedName
+            navigation.modalPresentationStyle = .fullScreen
+            navigation.modalTransitionStyle = .crossDissolve
+            self.present(navigation, animated: true, completion: nil)
+        }
+    }
+    
+    func error(error: String) {
+        print("error")
+    }
+    
+    
+}
+
