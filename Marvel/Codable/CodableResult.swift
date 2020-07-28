@@ -71,6 +71,15 @@ class CodableResult : Codable {
         
         hero.resourceURI = self.resourceURI
         
+        if let thumbnail = thumbnail {
+            if thumbnail.path != nil {
+                thumbnail.path.insert(contentsOf: "s", at: self.thumbnail.path.lastIndexOf("://")!)
+                hero.image = thumbnail.path + "/landscape_incredible.jpg"
+            }
+        }
+        
+        
+        
         return hero
     }
 }
