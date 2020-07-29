@@ -79,6 +79,9 @@ class InfoController: UIViewController {
     }
     
     @IBAction func saveHero(_ sender : UIButton) {
+        if hero.name == nil {
+            hero.name = self.barTitle
+        }
         RealmRepositories.saveHero(hero: hero)
     }
 }

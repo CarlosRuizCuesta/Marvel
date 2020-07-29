@@ -53,9 +53,14 @@ extension MoreInfoController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = self.tblData[indexPath.row]
         selectedName = section.name
-        self.alert = Utils.generateAlertControllerLoading(title: "Cargando")
-        self.present(self.alert, animated: true, completion: nil)
-        MarvelApiAppearance(delegate: self, url: section.resourceURI).start()
+        
+        if let hero = RealmRepositories.getHero(name: self.selectedName) {
+            presentHero(hero: hero)
+        } else {
+            self.alert = Utils.generateAlertControllerLoading(title: "Cargando")
+            self.present(self.alert, animated: true, completion: nil)
+            MarvelApiAppearance(delegate: self, url: section.resourceURI).start()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,19 +76,23 @@ extension MoreInfoController : UITableViewDataSource, UITableViewDelegate {
         
          return cell
     }
+    
+    func presentHero(hero : Hero) {
+        let infoController = InfoController(nibName: "InfoController", bundle: nil)
+        let navigation  = UINavigationController(rootViewController:infoController)
+        infoController.hero = hero
+        infoController.barTitle = self.selectedName
+        navigation.modalPresentationStyle = .fullScreen
+        navigation.modalTransitionStyle = .crossDissolve
+        self.present(navigation, animated: true, completion: nil)
+    }
 }
 
 extension MoreInfoController : MarvelApiResponse {
     func response(hero: Hero) {
         DispatchQueue.main.async {
             self.alert.dismiss(animated: true, completion: { () -> Void in
-                 let infoController = InfoController(nibName: "InfoController", bundle: nil)
-                 let navigation  = UINavigationController(rootViewController:infoController)
-                 infoController.hero = hero
-                 infoController.barTitle = self.selectedName
-                 navigation.modalPresentationStyle = .fullScreen
-                 navigation.modalTransitionStyle = .crossDissolve
-                 self.present(navigation, animated: true, completion: nil)
+                self.presentHero(hero: hero)
             })
         }
     }
