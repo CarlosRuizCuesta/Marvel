@@ -25,6 +25,44 @@ class Hero {
     var url : Url!
     
     
+    func toEntity() -> HeroEntity {
+        let heroEntity : HeroEntity = HeroEntity()
+        heroEntity.id = self.id
+        heroEntity.name = self.name
+        heroEntity.desc = self.description
+        heroEntity.modified = self.modified
+        heroEntity.image = self.image
+        
+        if let comics = self.comics {
+            heroEntity.comics = comics.toEntity()
+        }
+        
+        if let series = self.series {
+            heroEntity.series = series.toEntity()
+        }
+        
+        if let stories = self.stories {
+            heroEntity.stories = stories.toEntity()
+        }
+        
+        if let events = self.events {
+            heroEntity.events = events.toEntity()
+        }
+        
+        if let creators = self.creators {
+            heroEntity.creators = creators.toEntity()
+        }
+        
+        if let characters = self.characters {
+            heroEntity.characters = characters.toEntity()
+        }
+        if let url = self.url {
+            heroEntity.url = self.url.toEntity()
+        }
+        
+        return heroEntity
+    }
+    
     func sectionAppearance() -> [Appearance] {
         
         var sections : [Appearance] = []

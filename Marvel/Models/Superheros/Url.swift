@@ -12,4 +12,13 @@ import Foundation
 class Url {
     var type : String!
     var url : String!
+    
+    func toEntity() -> UrlEntity {
+        let urlEntity : UrlEntity = UrlEntity()
+        
+        urlEntity.type = self.type
+        urlEntity.url = self.url
+        
+        return urlEntity
+    }
 }

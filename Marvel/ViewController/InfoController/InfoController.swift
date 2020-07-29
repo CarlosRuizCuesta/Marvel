@@ -51,6 +51,7 @@ class InfoController: UIViewController {
     func completeNavigation() {
         self.title = self.barTitle
         addBackButton()
+        addRightButton()
     }
     
     func addBackButton() {
@@ -63,8 +64,22 @@ class InfoController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
+    func addRightButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(systemName: "star.fill", withConfiguration: .none), for: .normal)
+        backButton.setTitle(from, for: .normal)
+        backButton.setTitleColor(backButton.tintColor, for: .normal)
+        backButton.addTarget(self, action: #selector(self.saveHero(_:)), for: .touchUpInside)
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    
     @IBAction func backAction(_ sender: UIButton) {
        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveHero(_ sender : UIButton) {
+        RealmRepositories.saveHero(hero: hero)
     }
 }
 

@@ -34,6 +34,11 @@
 		0574A59424CF35F000575B06 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574A59324CF35F000575B06 /* Utils.swift */; };
 		0574A59824CF573A00575B06 /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574A59624CF573A00575B06 /* InfoController.swift */; };
 		0574A59924CF573A00575B06 /* InfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0574A59724CF573A00575B06 /* InfoController.xib */; };
+		05E69EEE24D1C50D0083ADE5 /* HeroEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EED24D1C50D0083ADE5 /* HeroEntity.swift */; };
+		05E69EF024D1CAAD0083ADE5 /* AppearanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EEF24D1CAAD0083ADE5 /* AppearanceEntity.swift */; };
+		05E69EF224D1CBFA0083ADE5 /* AppearanceItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EF124D1CBFA0083ADE5 /* AppearanceItemEntity.swift */; };
+		05E69EF424D1CC4B0083ADE5 /* UrlEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EF324D1CC4B0083ADE5 /* UrlEntity.swift */; };
+		05E69EF724D1D3390083ADE5 /* RealmRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EF624D1D3390083ADE5 /* RealmRepositories.swift */; };
 		1EA7BBF9F226F9BDCA2C0911 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7F1477A4A99201B6DBDC78 /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +72,11 @@
 		0574A59324CF35F000575B06 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0574A59624CF573A00575B06 /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
 		0574A59724CF573A00575B06 /* InfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoController.xib; sourceTree = "<group>"; };
+		05E69EED24D1C50D0083ADE5 /* HeroEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroEntity.swift; sourceTree = "<group>"; };
+		05E69EEF24D1CAAD0083ADE5 /* AppearanceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceEntity.swift; sourceTree = "<group>"; };
+		05E69EF124D1CBFA0083ADE5 /* AppearanceItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceItemEntity.swift; sourceTree = "<group>"; };
+		05E69EF324D1CC4B0083ADE5 /* UrlEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlEntity.swift; sourceTree = "<group>"; };
+		05E69EF624D1D3390083ADE5 /* RealmRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepositories.swift; sourceTree = "<group>"; };
 		85F7D14ED4A3481D96F20AA1 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		F5092CFCC4C307BAC8FD93B4 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
 		FA7F1477A4A99201B6DBDC78 /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +132,8 @@
 		0546CFE824CAECF700A6DB63 /* Marvel */ = {
 			isa = PBXGroup;
 			children = (
+				05E69EF524D1D3280083ADE5 /* RealmRepositories */,
+				05E69EEC24D1C4C70083ADE5 /* Entities */,
 				0541CA3524CB795200F90DF9 /* Protocols */,
 				0546D00424CB006900A6DB63 /* Codable */,
 				0546D00324CB005A00A6DB63 /* Models */,
@@ -215,6 +227,25 @@
 				0574A59724CF573A00575B06 /* InfoController.xib */,
 			);
 			path = InfoController;
+			sourceTree = "<group>";
+		};
+		05E69EEC24D1C4C70083ADE5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				05E69EED24D1C50D0083ADE5 /* HeroEntity.swift */,
+				05E69EEF24D1CAAD0083ADE5 /* AppearanceEntity.swift */,
+				05E69EF124D1CBFA0083ADE5 /* AppearanceItemEntity.swift */,
+				05E69EF324D1CC4B0083ADE5 /* UrlEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		05E69EF524D1D3280083ADE5 /* RealmRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				05E69EF624D1D3390083ADE5 /* RealmRepositories.swift */,
+			);
+			path = RealmRepositories;
 			sourceTree = "<group>";
 		};
 		A8D62667D9F4B2E4BDFECE37 /* Frameworks */ = {
@@ -359,7 +390,9 @@
 				0541CA3724CB796C00F90DF9 /* Protocols.swift in Sources */,
 				0546D04124CB244B00A6DB63 /* CodableResult.swift in Sources */,
 				0541CA3B24CB8EA900F90DF9 /* MoreInfoController.swift in Sources */,
+				05E69EEE24D1C50D0083ADE5 /* HeroEntity.swift in Sources */,
 				0546D05024CB346400A6DB63 /* Url.swift in Sources */,
+				05E69EF424D1CC4B0083ADE5 /* UrlEntity.swift in Sources */,
 				0546D04524CB29BC00A6DB63 /* CodableAppearance.swift in Sources */,
 				0546D03924CB1CBE00A6DB63 /* Extensions.swift in Sources */,
 				0546D04324CB285C00A6DB63 /* CodableUrl.swift in Sources */,
@@ -368,11 +401,14 @@
 				0546D03624CB1C8900A6DB63 /* MarvelApi.swift in Sources */,
 				0546CFEA24CAECF700A6DB63 /* AppDelegate.swift in Sources */,
 				0546D04724CB2ABA00A6DB63 /* CodableAppearanceItem.swift in Sources */,
+				05E69EF724D1D3390083ADE5 /* RealmRepositories.swift in Sources */,
 				0574A59424CF35F000575B06 /* Utils.swift in Sources */,
 				0546D04E24CB342800A6DB63 /* Appearance.swift in Sources */,
 				0546D04C24CB32D900A6DB63 /*  Hero.swift in Sources */,
 				0546D05224CB34A300A6DB63 /* AppearanceItem.swift in Sources */,
+				05E69EF024D1CAAD0083ADE5 /* AppearanceEntity.swift in Sources */,
 				0546D00124CAFFFF00A6DB63 /* MainViewController.swift in Sources */,
+				05E69EF224D1CBFA0083ADE5 /* AppearanceItemEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

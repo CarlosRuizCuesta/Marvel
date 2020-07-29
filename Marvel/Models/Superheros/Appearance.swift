@@ -14,6 +14,19 @@ class Appearance {
     var collectionURI : String!
     var items : [AppearanceItem]! = []
     
+    func toEntity() -> AppearanceEntity {
+        let apparanceEntity : AppearanceEntity = AppearanceEntity()
+        
+        apparanceEntity.available = self.available
+        apparanceEntity.collectionURI = self.collectionURI
+        
+        for item in items {
+            apparanceEntity.items.append(item.toEntity())
+        }
+        
+        return apparanceEntity
+    }
+    
     
     func getType() -> String {
         let fullUri = collectionURI.components(separatedBy: "/")

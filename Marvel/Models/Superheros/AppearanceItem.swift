@@ -12,4 +12,13 @@ import Foundation
 class AppearanceItem {
     var resourceURI : String!
     var name : String!
+    
+    func toEntity() -> AppearanceItemEntity {
+        let appearanceItemEntity : AppearanceItemEntity = AppearanceItemEntity()
+        
+        appearanceItemEntity.resourceURI = self.resourceURI
+        appearanceItemEntity.name = self.name
+        
+        return appearanceItemEntity
+    }
 }
