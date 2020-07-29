@@ -27,7 +27,7 @@ class RealmRepositories {
     class func getHero(name : String) -> Hero? {
         do {
             let realm = try Realm()
-            if let entityHero = realm.objects(HeroEntity.self).filter("name == %@", name).first {
+            if let entityHero = realm.objects(HeroEntity.self).filter("name == %@", name.capitalized).first {
                 let hero = entityHero.toModel()
                 return hero
             }
