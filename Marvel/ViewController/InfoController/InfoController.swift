@@ -16,11 +16,6 @@ class InfoController: UIViewController {
     @IBOutlet weak var lblDesc : UILabel!
     @IBOutlet weak var imageView : UIImageView!
     @IBOutlet weak var tblInfo : UITableView!
-
-    let leftBarButtonItem: UIBarButtonItem = {
-        let barButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: nil)
-        return barButtonItem
-    }()
     
     var hero : Hero!
     var from : String!
@@ -51,7 +46,15 @@ class InfoController: UIViewController {
     func completeNavigation() {
         self.title = self.barTitle
         addBackButton()
-        addRightButton()
+        addBarButton()
+    }
+    
+    func addBarButton() {
+        if hero.from == .apiMarvel {
+            addRightButton(systemName: "star")
+        } else if hero.from == .database {
+            addRightButton(systemName: "star.fill")
+        }
     }
     
     func addBackButton() {
@@ -64,12 +67,12 @@ class InfoController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
-    func addRightButton() {
+    func addRightButton(systemName : String) {
         let backButton = UIButton(type: .custom)
-        backButton.setImage(UIImage(systemName: "star.fill", withConfiguration: .none), for: .normal)
+        backButton.setImage(UIImage(systemName: systemName, withConfiguration: .none), for: .normal)
         backButton.setTitle(from, for: .normal)
         backButton.setTitleColor(backButton.tintColor, for: .normal)
-        backButton.addTarget(self, action: #selector(self.saveHero(_:)), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(self.toogleSave(_:)), for: .touchUpInside)
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: backButton)
     }
@@ -78,10 +81,27 @@ class InfoController: UIViewController {
        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func saveHero(_ sender : UIButton) {
+    @IBAction func toogleSave(_ sender : UIButton) {
         if hero.name == nil {
             hero.name = self.barTitle
         }
+        
+        if hero.from == .apiMarvel {
+            hero.from = .database
+            saveHero(hero: hero)
+        } else if hero.from == .database {
+            hero.from = .apiMarvel
+            deleteHero(hero: hero)
+        }
+        
+        addBarButton()
+    }
+    
+    func deleteHero(hero : Hero) {
+        RealmRepositories.deleteHero(hero : hero)
+    }
+    
+    func saveHero(hero : Hero) {
         RealmRepositories.saveHero(hero: hero)
     }
 }

@@ -17,7 +17,10 @@ class Appearance {
     func toEntity() -> AppearanceEntity {
         let apparanceEntity : AppearanceEntity = AppearanceEntity()
         
-        apparanceEntity.available = self.available
+        if let available = self.available {
+            apparanceEntity.available = self.available
+        }
+        
         apparanceEntity.collectionURI = self.collectionURI
         
         for item in items {

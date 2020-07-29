@@ -62,6 +62,8 @@ class HeroEntity : Object {
             hero.url = url.toModel()
         }
         
+        hero.from = .database
+        
         return hero
     }
 }

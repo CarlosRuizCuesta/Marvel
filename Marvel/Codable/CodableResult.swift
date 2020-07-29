@@ -78,7 +78,7 @@ class CodableResult : Codable {
             }
         }
         
-        
+        hero.from = .apiMarvel
         
         return hero
     }

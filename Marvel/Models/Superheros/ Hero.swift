@@ -23,6 +23,7 @@ class Hero {
     var characters : Appearance!
     var resourceURI : String!
     var url : Url!
+    var from : HeroFrom!
     
     
     func toEntity() -> HeroEntity {
@@ -118,5 +119,10 @@ class Hero {
         }
         
         return sections
+    }
+    
+    enum HeroFrom {
+        case database
+        case apiMarvel
     }
 }

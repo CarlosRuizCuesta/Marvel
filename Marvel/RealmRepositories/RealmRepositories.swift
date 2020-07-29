@@ -41,4 +41,19 @@ class RealmRepositories {
         
         return nil
     }
+    
+    class func deleteHero(hero : Hero) {
+        do {
+            let realm = try Realm()
+            
+            if let entityHero = realm.objects(HeroEntity.self).filter("name = %@", hero.name).first {
+                try! realm.write {
+                    realm.delete(entityHero)
+                }
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+
+    }
 }
