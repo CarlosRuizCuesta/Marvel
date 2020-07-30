@@ -43,6 +43,9 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tok-fM-BT4">
                     <rect key="frame" x="20" y="385" width="374" height="477"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="477" id="4XI-Sa-PvF"/>
+                    </constraints>
                     <color key="separatorColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <connections>
@@ -50,45 +53,45 @@
                         <outlet property="delegate" destination="-1" id="aMu-hb-YYV"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NG7-qK-Cgh">
-                    <rect key="frame" x="0.0" y="338" width="191" height="39"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwA-FD-3xk">
-                            <rect key="frame" x="23" y="10" width="116.5" height="21"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwA-FD-3xk" customClass="PaddingLabel" customModule="Marvel" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="346" width="145" height="31"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="KwA-FD-3xk" firstAttribute="leading" secondItem="NG7-qK-Cgh" secondAttribute="leading" constant="23" id="4GW-cA-hbY"/>
-                        <constraint firstItem="KwA-FD-3xk" firstAttribute="top" secondItem="NG7-qK-Cgh" secondAttribute="top" constant="10" id="FhM-2b-IBh"/>
-                        <constraint firstAttribute="bottom" secondItem="KwA-FD-3xk" secondAttribute="bottom" constant="8" id="Ij0-zW-eUj"/>
+                        <constraint firstAttribute="height" constant="31" id="Olr-W3-Hno"/>
                     </constraints>
-                </view>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="leftInsert">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="KwA-FD-3xk" firstAttribute="top" secondItem="Tsg-yY-uwK" secondAttribute="bottom" constant="16" id="0dS-SJ-GKA"/>
                 <constraint firstItem="tok-fM-BT4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3Kf-Pm-GKI"/>
                 <constraint firstItem="tok-fM-BT4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="5Ey-B2-CaZ"/>
-                <constraint firstItem="tok-fM-BT4" firstAttribute="top" secondItem="NG7-qK-Cgh" secondAttribute="bottom" constant="8" id="5k7-p8-ISY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NG7-qK-Cgh" secondAttribute="trailing" constant="223" id="6SL-mF-pvr"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7gc-NC-GlV"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9S3-8A-HvC"/>
-                <constraint firstItem="NG7-qK-Cgh" firstAttribute="top" secondItem="Tsg-yY-uwK" secondAttribute="bottom" constant="8" id="Apn-El-1x4"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DSx-K3-Yaw"/>
-                <constraint firstAttribute="bottom" secondItem="NG7-qK-Cgh" secondAttribute="bottom" constant="519" id="HCf-02-JZD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KwA-FD-3xk" secondAttribute="trailing" constant="269" id="Hky-xK-we0"/>
+                <constraint firstItem="KwA-FD-3xk" firstAttribute="leading" secondItem="Tsg-yY-uwK" secondAttribute="leading" id="Mug-hC-Bh9"/>
                 <constraint firstItem="cMs-Oa-tjo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SgD-kx-Lpz"/>
                 <constraint firstItem="GcJ-CG-pk4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TFO-zb-VBM"/>
+                <constraint firstItem="tok-fM-BT4" firstAttribute="top" secondItem="KwA-FD-3xk" secondAttribute="bottom" constant="8" id="TbR-TH-RdL"/>
                 <constraint firstItem="cMs-Oa-tjo" firstAttribute="top" secondItem="GcJ-CG-pk4" secondAttribute="bottom" id="Xvy-ks-VMl"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YM5-FB-Qyj"/>
                 <constraint firstItem="cMs-Oa-tjo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aKZ-tn-6LN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tok-fM-BT4" secondAttribute="trailing" constant="20" id="cLB-YL-tqk"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cYk-Zr-qU0"/>
-                <constraint firstItem="NG7-qK-Cgh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cav-3P-CAq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KwA-FD-3xk" secondAttribute="trailing" constant="269" id="fX6-8W-93x"/>
+                <constraint firstItem="tok-fM-BT4" firstAttribute="top" secondItem="KwA-FD-3xk" secondAttribute="bottom" constant="8" id="iCh-Gw-3Wu"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="top" secondItem="cMs-Oa-tjo" secondAttribute="bottom" constant="16" id="iDS-Wf-WQq"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iZf-uN-IYS"/>
+                <constraint firstItem="KwA-FD-3xk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ibh-EY-DaT"/>
                 <constraint firstItem="GcJ-CG-pk4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lQd-jZ-yem"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nJw-62-JPU"/>
                 <constraint firstItem="GcJ-CG-pk4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zam-eY-JJL"/>

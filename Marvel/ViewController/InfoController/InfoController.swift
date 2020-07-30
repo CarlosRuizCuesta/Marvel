@@ -25,6 +25,7 @@ class InfoController: UIViewController {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
         tblInfo.delegate = self
+        tblInfo.tableFooterView = UIView()
         completeNavigation()
         completeData()
     }
