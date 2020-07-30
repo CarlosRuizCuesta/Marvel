@@ -44,8 +44,8 @@
                         <outlet property="delegate" destination="-1" id="RaN-ox-IeM"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="noseque noseque noseque noseque nosequ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXA-bX-ocn" customClass="PaddingLabel" customModule="Marvel" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="331" width="202" height="36"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iron man" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXA-bX-ocn" customClass="PaddingLabel" customModule="Marvel" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="333" width="125.5" height="35.5"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,18 +73,17 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Fi-Ph-18r" secondAttribute="trailing" constant="-5" id="3pQ-jH-6ty"/>
                 <constraint firstItem="5Fi-Ph-18r" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9D7-Sj-XOZ"/>
                 <constraint firstItem="shL-gR-Jbr" firstAttribute="top" secondItem="tb4-ci-87k" secondAttribute="bottom" constant="8.5" id="9wm-2K-ozd"/>
-                <constraint firstItem="tb4-ci-87k" firstAttribute="top" secondItem="GXA-bX-ocn" secondAttribute="bottom" constant="13" id="CBz-ix-MZm"/>
                 <constraint firstItem="9BO-bc-oF7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="151" id="E1R-Xz-DG1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="shL-gR-Jbr" secondAttribute="trailing" constant="20" id="ISv-za-2RM"/>
-                <constraint firstItem="GXA-bX-ocn" firstAttribute="top" secondItem="9BO-bc-oF7" secondAttribute="bottom" constant="136" id="Knf-KF-czU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9BO-bc-oF7" secondAttribute="trailing" constant="20" id="PhZ-xw-MtM"/>
                 <constraint firstItem="shL-gR-Jbr" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="TU1-9B-BZ3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Fi-Ph-18r" secondAttribute="trailing" constant="-5" id="Va3-Er-4eu"/>
-                <constraint firstItem="tb4-ci-87k" firstAttribute="top" secondItem="9BO-bc-oF7" secondAttribute="bottom" constant="185" id="cCw-sE-tQu"/>
+                <constraint firstItem="tb4-ci-87k" firstAttribute="top" secondItem="GXA-bX-ocn" secondAttribute="bottom" constant="11.5" id="WCq-Iy-kKr"/>
                 <constraint firstItem="shL-gR-Jbr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cZY-2X-qGZ"/>
                 <constraint firstItem="5Fi-Ph-18r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dlo-Ys-t6b"/>
                 <constraint firstItem="9BO-bc-oF7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gvh-gc-HGP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GXA-bX-ocn" secondAttribute="trailing" constant="20" id="sLK-HK-Dui"/>
+                <constraint firstItem="tb4-ci-87k" firstAttribute="top" secondItem="5Fi-Ph-18r" secondAttribute="bottom" constant="28" id="sg0-Zp-5Po"/>
                 <constraint firstItem="GXA-bX-ocn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wAa-Ib-aKj"/>
                 <constraint firstItem="5Fi-Ph-18r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wU0-yB-BAv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5Fi-Ph-18r" secondAttribute="bottom" constant="510" id="wWb-GU-Kzo"/>
