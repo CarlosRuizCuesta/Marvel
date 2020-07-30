@@ -45,6 +45,7 @@ class InfoController: UIViewController {
     
     func completeNavigation() {
         self.title = self.barTitle
+        lblName.text = self.barTitle
         addBackButton()
         addBarButton()
     }

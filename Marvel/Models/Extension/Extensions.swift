@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 import CommonCrypto
 
 extension String {
@@ -40,5 +40,22 @@ extension NSDate {
         let milliseconds: Int64 = Int64(objUTCDate.timeIntervalSince1970)
         let strTimeStamp: String = "\(milliseconds)"
         return strTimeStamp
+    }
+}
+
+@IBDesignable public class PaddingLabel : UILabel {
+    @IBInspectable var topInsert : CGFloat = 0
+    @IBInspectable var bottomInsert : CGFloat = 0
+    @IBInspectable var leftInsert : CGFloat = 0
+    @IBInspectable var rightInsert : CGFloat = 0
+    
+    public override func drawText(in rect: CGRect) {
+        let inset = UIEdgeInsets.init(top: topInsert, left: leftInsert, bottom: bottomInsert, right: rightInsert)
+        super.drawText(in: rect.inset(by: inset))
+    }
+    
+    public override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + leftInsert + rightInsert, height: size.height + topInsert + bottomInsert)
     }
 }
