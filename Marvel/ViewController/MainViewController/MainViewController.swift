@@ -13,14 +13,30 @@ import Alamofire
 class MainViewController: UIViewController {
 
     @IBOutlet weak var searchBar : UISearchBar!
+    @IBOutlet weak var navigationBar : UINavigationBar!
+    @IBOutlet weak var tblHeroes : UITableView!
+    
+    var selectedName : String!
     var alert : UIAlertController!
+    var arrHeroes : [Hero] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        tblHeroes.tableFooterView = UIView()
+        tblHeroes.delegate = self
+        navigationBar.topItem?.title = "Marvel Heroes"
+        getData()
         
         if let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
             print("Documents directory \(documentPath)")
+        }
+    }
+    
+    func getData() {
+        if let heroes = RealmRepositories.getHeroes() {
+            self.arrHeroes = heroes
+            self.tblHeroes.reloadData()
         }
     }
     
@@ -53,7 +69,6 @@ extension MainViewController : UISearchBarDelegate {
     }
 }
 
-
 extension MainViewController : MarvelApiResponse {
     
     func response(hero: Hero) {
@@ -72,4 +87,31 @@ extension MainViewController : MarvelApiResponse {
             })
         }
     }
+}
+
+extension MainViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = self.arrHeroes[indexPath.row]
+        self.selectedName = section.name
+        
+        presentHero(hero: section)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrHeroes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "mycell")
+        
+        let section = self.arrHeroes[indexPath.row]
+
+        cell.textLabel?.text  = section.name
+        cell.accessoryType = .disclosureIndicator
+        
+        return cell
+    }
+    
+    
 }

@@ -9,7 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Marvel" customModuleProvider="target">
             <connections>
-                <outlet property="searchBar" destination="3l1-T3-c47" id="9yd-gx-3bC"/>
+                <outlet property="navigationBar" destination="GcJ-CG-pk4" id="jpN-dz-Xwz"/>
+                <outlet property="searchBar" destination="cMs-Oa-tjo" id="jqO-kC-ghu"/>
+                <outlet property="tblHeroes" destination="tok-fM-BT4" id="3yU-3E-Pjn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,19 +20,84 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3l1-T3-c47">
-                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="GcJ-CG-pk4">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem title="Title" id="23r-Rc-JHp"/>
+                    </items>
+                </navigationBar>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarvelLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Tsg-yY-uwK">
+                    <rect key="frame" x="0.0" y="160" width="414" height="170"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="414" id="BOD-U9-9UH"/>
+                        <constraint firstAttribute="height" constant="170" id="Gwv-dK-acM"/>
+                    </constraints>
+                </imageView>
+                <searchBar contentMode="redraw" placeholder="Busca Heroes" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-Oa-tjo">
+                    <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="MgJ-Or-abh"/>
+                    </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tok-fM-BT4">
+                    <rect key="frame" x="20" y="385" width="374" height="477"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="separatorColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="c8O-dq-syl"/>
+                        <outlet property="delegate" destination="-1" id="aMu-hb-YYV"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NG7-qK-Cgh">
+                    <rect key="frame" x="0.0" y="338" width="191" height="39"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwA-FD-3xk">
+                            <rect key="frame" x="23" y="10" width="116.5" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="KwA-FD-3xk" firstAttribute="leading" secondItem="NG7-qK-Cgh" secondAttribute="leading" constant="23" id="4GW-cA-hbY"/>
+                        <constraint firstItem="KwA-FD-3xk" firstAttribute="top" secondItem="NG7-qK-Cgh" secondAttribute="top" constant="10" id="FhM-2b-IBh"/>
+                        <constraint firstAttribute="bottom" secondItem="KwA-FD-3xk" secondAttribute="bottom" constant="8" id="Ij0-zW-eUj"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="3l1-T3-c47" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6SO-Dn-GFU"/>
-                <constraint firstItem="3l1-T3-c47" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="iTB-67-1ve"/>
-                <constraint firstItem="3l1-T3-c47" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wHe-yV-lIc"/>
+                <constraint firstItem="tok-fM-BT4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="3Kf-Pm-GKI"/>
+                <constraint firstItem="tok-fM-BT4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="5Ey-B2-CaZ"/>
+                <constraint firstItem="tok-fM-BT4" firstAttribute="top" secondItem="NG7-qK-Cgh" secondAttribute="bottom" constant="8" id="5k7-p8-ISY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NG7-qK-Cgh" secondAttribute="trailing" constant="223" id="6SL-mF-pvr"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7gc-NC-GlV"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9S3-8A-HvC"/>
+                <constraint firstItem="NG7-qK-Cgh" firstAttribute="top" secondItem="Tsg-yY-uwK" secondAttribute="bottom" constant="8" id="Apn-El-1x4"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DSx-K3-Yaw"/>
+                <constraint firstAttribute="bottom" secondItem="NG7-qK-Cgh" secondAttribute="bottom" constant="519" id="HCf-02-JZD"/>
+                <constraint firstItem="cMs-Oa-tjo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SgD-kx-Lpz"/>
+                <constraint firstItem="GcJ-CG-pk4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TFO-zb-VBM"/>
+                <constraint firstItem="cMs-Oa-tjo" firstAttribute="top" secondItem="GcJ-CG-pk4" secondAttribute="bottom" id="Xvy-ks-VMl"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YM5-FB-Qyj"/>
+                <constraint firstItem="cMs-Oa-tjo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aKZ-tn-6LN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tok-fM-BT4" secondAttribute="trailing" constant="20" id="cLB-YL-tqk"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cYk-Zr-qU0"/>
+                <constraint firstItem="NG7-qK-Cgh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cav-3P-CAq"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="top" secondItem="cMs-Oa-tjo" secondAttribute="bottom" constant="16" id="iDS-Wf-WQq"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iZf-uN-IYS"/>
+                <constraint firstItem="GcJ-CG-pk4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lQd-jZ-yem"/>
+                <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nJw-62-JPU"/>
+                <constraint firstItem="GcJ-CG-pk4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zam-eY-JJL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="MarvelLogo" width="1024" height="412"/>
+    </resources>
 </document>
