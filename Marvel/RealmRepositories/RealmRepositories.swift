@@ -54,6 +54,27 @@ class RealmRepositories {
         } catch let error as NSError {
             print(error)
         }
-
+    }
+    
+    class func getHeroes() -> [Hero]? {
+        do {
+            let realm = try Realm()
+            let HeroesEntity : Results<HeroEntity> = realm.objects(HeroEntity.self)
+            var heroes : [Hero] = []
+            
+            for HeroEntity in HeroesEntity.reversed() {
+                heroes.append(HeroEntity.toModel())
+            }
+            
+            if heroes.count > 0 {
+                return heroes
+            }
+            
+            return nil
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        return nil
     }
 }
