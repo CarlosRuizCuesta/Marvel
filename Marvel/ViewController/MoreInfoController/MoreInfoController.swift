@@ -25,6 +25,7 @@ class MoreInfoController: UIViewController {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
         self.title = barTitle
+        tblAppearance .tableFooterView = UIView()
         addBackButton()
         setupData()
     }
