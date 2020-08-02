@@ -17,6 +17,8 @@ class InfoController: UIViewController {
     @IBOutlet weak var imageView : UIImageView!
     @IBOutlet weak var tblInfo : UITableView!
     
+    typealias complitionBlock = (() -> Void)
+    var complition: complitionBlock!
     var hero : Hero!
     var from : String!
     var barTitle : String!
@@ -79,8 +81,13 @@ class InfoController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
+    func backComplition(mycomplition: @escaping complitionBlock) {
+        complition = mycomplition
+    }
+    
     @IBAction func backAction(_ sender: UIButton) {
-       dismiss(animated: true, completion: nil)
+        complition()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func toogleSave(_ sender : UIButton) {

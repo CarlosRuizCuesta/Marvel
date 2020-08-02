@@ -31,6 +31,12 @@ extension String {
     }
 }
 
+extension UISearchBar {
+    func clearBar() {
+        self.text = ""
+    }
+}
+
 extension NSDate {
     var timestamp : String {
         let objDateformat: DateFormatter = DateFormatter()

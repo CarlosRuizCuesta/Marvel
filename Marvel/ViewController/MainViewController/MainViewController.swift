@@ -13,7 +13,6 @@ import Alamofire
 class MainViewController: UIViewController {
 
     @IBOutlet weak var searchBar : UISearchBar!
-    //@IBOutlet weak var navigationBar : UINavigationBar!
     @IBOutlet weak var tblHeroes : UITableView!
     
     var selectedName : String!
@@ -42,6 +41,10 @@ class MainViewController: UIViewController {
     func presentHero(hero : Hero) {
         let infoController = InfoController(nibName: "InfoController", bundle: nil)
         let navigation  = UINavigationController(rootViewController:infoController)
+        infoController.backComplition(){ () in
+            self.searchBar.clearBar()
+            self.getData()
+        }
         infoController.hero = hero
         infoController.barTitle = hero.name
         navigation.modalPresentationStyle = .fullScreen
