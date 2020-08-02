@@ -118,6 +118,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         
         let section = self.arrHeroes[indexPath.row]
 
+        cell.textLabel?.font = UIFont(name: "RobotoCondensed-Regular", size: 17)
         cell.textLabel?.text  = section.name
         cell.accessoryType = .disclosureIndicator
         

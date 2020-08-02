@@ -15,6 +15,7 @@ class Utils {
     class func generateAlertControllerLoading(title : String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
 
+        alert.setTitlet(font: UIFont(name: "RobotoCondensed-Regular", size: 17), color: nil)
         //create an activity indicator
         let indicator = UIActivityIndicatorView(frame: alert.view.bounds)
         
@@ -34,6 +35,7 @@ class Utils {
     
     class func generateAlertController(title : String, message : String)  -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.setTitlet(font: UIFont(name: "RobotoCondensed-Regular", size: 17), color: nil)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         return alert
     }
