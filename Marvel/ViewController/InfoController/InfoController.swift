@@ -40,6 +40,8 @@ class InfoController: UIViewController {
             Alamofire.request(image).responseImage { response in
                 if let image = response.result.value {
                     self.imageView.image = image
+                } else {
+                    self.setDefaultImage()
                 }
             }
         }
@@ -51,6 +53,10 @@ class InfoController: UIViewController {
         lblName.text = self.barTitle
         addBackButton()
         addBarButton()
+    }
+    
+    func setDefaultImage() {
+        self.imageView.image = UIImage(named: "image-not-found.png")
     }
     
     func addBarButton() {
@@ -86,7 +92,10 @@ class InfoController: UIViewController {
     }
     
     @IBAction func backAction(_ sender: UIButton) {
-        complition()
+        if let complition = complition {
+            complition()
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
