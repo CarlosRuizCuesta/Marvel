@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var searchBar : UISearchBar!
     @IBOutlet weak var tblHeroes : UITableView!
+    @IBOutlet weak var lblFav : PaddingLabel!
     
     var selectedName : String!
     var alert : UIAlertController!
@@ -22,6 +23,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        lblFav.text = NSLocalizedString("Favorites", comment: "")
         tblHeroes.tableFooterView = UIView()
         tblHeroes.delegate = self
         getData()
@@ -62,7 +64,7 @@ extension MainViewController : UISearchBarDelegate {
                 if let hero = RealmRepositories.getHero(name: text) {
                     presentHero(hero: hero)
                 } else {
-                    self.alert = Utils.generateAlertControllerLoading(title: "Cargando")
+                    self.alert = Utils.generateAlertControllerLoading(title: NSLocalizedString("Loading", comment: ""))
                     self.present(self.alert, animated: true, completion: nil)
                     MarvelApiHeroes(delegate: self, name: text).start()
                 }
@@ -84,7 +86,7 @@ extension MainViewController : MarvelApiResponse {
     func error(error : ErrorDetails) {
         DispatchQueue.main.async {
             self.alert.dismiss(animated: true, completion: { () -> Void in
-                let alertController = Utils.generateAlertController(title: "Error", message: error.message)
+                let alertController = Utils.generateAlertController(title: NSLocalizedString("Error", comment: ""), message: error.message)
                 self.present(alertController, animated: true, completion: nil)
             })
         }
@@ -105,7 +107,7 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
         let count = arrHeroes.count
         
         if count <= 0 {
-            tblHeroes.setNoDataPlaceholder("No hay favoritos")
+            tblHeroes.setNoDataPlaceholder(NSLocalizedString("No favorites", comment: ""))
         } else {
             tblHeroes.removeNoDataPlaceholder()
         }

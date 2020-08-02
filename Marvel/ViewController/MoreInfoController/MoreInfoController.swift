@@ -58,7 +58,7 @@ extension MoreInfoController : UITableViewDataSource, UITableViewDelegate {
         if let hero = RealmRepositories.getHero(name: self.selectedName) {
             presentHero(hero: hero)
         } else {
-            self.alert = Utils.generateAlertControllerLoading(title: "Cargando")
+            self.alert = Utils.generateAlertControllerLoading(title: NSLocalizedString("Loading", comment: ""))
             self.present(self.alert, animated: true, completion: nil)
             MarvelApiAppearance(delegate: self, url: section.resourceURI).start()
         }

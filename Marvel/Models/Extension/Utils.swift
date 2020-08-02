@@ -36,8 +36,8 @@ class Utils {
     class func generateAlertController(title : String, message : String)  -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.setTitlet(font: UIFont(name: "RobotoCondensed-Regular", size: 17), color: nil)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        return alert
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .cancel, handler: nil))
+        return alert ////NSLocalizedString("Thank you for trying this app, you are a great person!", comment: "")
     }
     
     

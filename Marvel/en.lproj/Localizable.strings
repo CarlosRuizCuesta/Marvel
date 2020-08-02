@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Marvel
+
+  Created by MIGUEL PEREZ SUBIAS on 02/08/2020.
+  Copyright © 2020 Carlos Ruiz Cuesta. All rights reserved.
+*/
+"Loading"="Loading";
+"Error"="Error";
+"Ok"="Ok";
+"No favorites"="No favorites";
+"Favorites"="Favorites";
+"Internet connection error"="Internet connection error";
+"Error with the Marvel API"="Error with the Marvel API";
+"Error getting the data"="Error getting the data";
+"No results for the search"="No results for the search";

@@ -18,6 +18,7 @@
 		0544269124D7283B00FB941A /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0544268A24D7283B00FB941A /* RobotoCondensed-LightItalic.ttf */; };
 		0544269224D7283B00FB941A /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0544268B24D7283B00FB941A /* RobotoCondensed-Regular.ttf */; };
 		0544269324D7283B00FB941A /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0544268C24D7283B00FB941A /* LICENSE.txt */; };
+		0544269B24D7323E00FB941A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0544269D24D7323E00FB941A /* Localizable.strings */; };
 		0545ACB224D0768B006611DA /* ErrorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545ACB124D0768B006611DA /* ErrorDetail.swift */; };
 		0546CFEA24CAECF700A6DB63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546CFE924CAECF700A6DB63 /* AppDelegate.swift */; };
 		0546CFF324CAECFE00A6DB63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0546CFF224CAECFE00A6DB63 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		0544268A24D7283B00FB941A /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		0544268B24D7283B00FB941A /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		0544268C24D7283B00FB941A /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		0544269C24D7323E00FB941A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0545ACB124D0768B006611DA /* ErrorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetail.swift; sourceTree = "<group>"; };
 		0546CFE624CAECF700A6DB63 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0546CFE924CAECF700A6DB63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				0546CFF224CAECFE00A6DB63 /* Assets.xcassets */,
 				0546CFF424CAECFE00A6DB63 /* LaunchScreen.storyboard */,
 				0546CFF724CAECFE00A6DB63 /* Info.plist */,
+				0544269D24D7323E00FB941A /* Localizable.strings */,
 			);
 			path = Marvel;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				0544269024D7283B00FB941A /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				05E69F2124D1F5210083ADE5 /* FavoritesVC.xib in Resources */,
 				0544269124D7283B00FB941A /* RobotoCondensed-LightItalic.ttf in Resources */,
+				0544269B24D7323E00FB941A /* Localizable.strings in Resources */,
 				0574A59924CF573A00575B06 /* InfoController.xib in Resources */,
 				0544268E24D7283B00FB941A /* RobotoCondensed-Light.ttf in Resources */,
 				0544269324D7283B00FB941A /* LICENSE.txt in Resources */,
@@ -476,6 +480,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0544269D24D7323E00FB941A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0544269C24D7323E00FB941A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0546CFF424CAECFE00A6DB63 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

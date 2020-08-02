@@ -10,16 +10,27 @@ import Foundation
 
 
 class ErrorDetails : Error {
-    enum errorEnum : String {
-        case httpurlResponse = "Internet connection error"
-        case statusCode = "Error with the Marvel API"
-        case decoderError = "Error getting the data"
-        case zeroResult = "No results for the search"
+    enum errorEnum {
+        case httpurlResponse
+        case statusCode
+        case decoderError
+        case zeroResult
     }
     
     var message : String!
     
     init(errorEnum : errorEnum) {
-        message = errorEnum.rawValue
+        switch errorEnum {
+        case .httpurlResponse:
+            message = NSLocalizedString("Internet connection error", comment: "")
+        case .statusCode:
+            message = NSLocalizedString("Error with the Marvel API", comment: "")
+        case .decoderError:
+            message = NSLocalizedString("Error getting the data", comment: "")
+        case .zeroResult:
+            message = NSLocalizedString("No results for the search", comment: "")
+        default:
+            message = ""
+        }
     }
 }

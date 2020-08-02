@@ -14,6 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Marvel" customModuleProvider="target">
             <connections>
+                <outlet property="lblFav" destination="KwA-FD-3xk" id="qUP-J7-zB7"/>
                 <outlet property="searchBar" destination="cMs-Oa-tjo" id="jqO-kC-ghu"/>
                 <outlet property="tblHeroes" destination="tok-fM-BT4" id="3yU-3E-Pjn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -48,8 +49,8 @@
                         <outlet property="delegate" destination="-1" id="aMu-hb-YYV"/>
                     </connections>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwA-FD-3xk" customClass="PaddingLabel" customModule="Marvel" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="302" width="122.5" height="31"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwA-FD-3xk" customClass="PaddingLabel" customModule="Marvel" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="302" width="0.0" height="31"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="Olr-W3-Hno"/>
