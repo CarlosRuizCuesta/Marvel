@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Marvel" customModuleProvider="target">
             <connections>
-                <outlet property="navigationBar" destination="GcJ-CG-pk4" id="jpN-dz-Xwz"/>
                 <outlet property="searchBar" destination="cMs-Oa-tjo" id="jqO-kC-ghu"/>
                 <outlet property="tblHeroes" destination="tok-fM-BT4" id="3yU-3E-Pjn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,28 +19,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="GcJ-CG-pk4">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <items>
-                        <navigationItem title="Title" id="23r-Rc-JHp"/>
-                    </items>
-                </navigationBar>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarvelLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Tsg-yY-uwK">
-                    <rect key="frame" x="0.0" y="160" width="414" height="170"/>
+                    <rect key="frame" x="0.0" y="116" width="414" height="170"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="414" id="BOD-U9-9UH"/>
                         <constraint firstAttribute="height" constant="170" id="Gwv-dK-acM"/>
                     </constraints>
                 </imageView>
                 <searchBar contentMode="redraw" placeholder="Busca Heroes" translatesAutoresizingMaskIntoConstraints="NO" id="cMs-Oa-tjo">
-                    <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="MgJ-Or-abh"/>
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tok-fM-BT4">
-                    <rect key="frame" x="20" y="385" width="374" height="477"/>
+                    <rect key="frame" x="20" y="341" width="374" height="521"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="477" id="4XI-Sa-PvF"/>
@@ -54,7 +47,7 @@
                     </connections>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwA-FD-3xk" customClass="PaddingLabel" customModule="Marvel" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="346" width="145" height="31"/>
+                    <rect key="frame" x="0.0" y="302" width="146.5" height="31"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="Olr-W3-Hno"/>
@@ -65,6 +58,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="leftInsert">
                             <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="rightInsert">
+                            <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
@@ -77,24 +73,19 @@
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7gc-NC-GlV"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9S3-8A-HvC"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DSx-K3-Yaw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KwA-FD-3xk" secondAttribute="trailing" constant="269" id="Hky-xK-we0"/>
+                <constraint firstItem="cMs-Oa-tjo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KY7-2s-GH5"/>
                 <constraint firstItem="KwA-FD-3xk" firstAttribute="leading" secondItem="Tsg-yY-uwK" secondAttribute="leading" id="Mug-hC-Bh9"/>
                 <constraint firstItem="cMs-Oa-tjo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SgD-kx-Lpz"/>
-                <constraint firstItem="GcJ-CG-pk4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TFO-zb-VBM"/>
                 <constraint firstItem="tok-fM-BT4" firstAttribute="top" secondItem="KwA-FD-3xk" secondAttribute="bottom" constant="8" id="TbR-TH-RdL"/>
-                <constraint firstItem="cMs-Oa-tjo" firstAttribute="top" secondItem="GcJ-CG-pk4" secondAttribute="bottom" id="Xvy-ks-VMl"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YM5-FB-Qyj"/>
                 <constraint firstItem="cMs-Oa-tjo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aKZ-tn-6LN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tok-fM-BT4" secondAttribute="trailing" constant="20" id="cLB-YL-tqk"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cYk-Zr-qU0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KwA-FD-3xk" secondAttribute="trailing" constant="269" id="fX6-8W-93x"/>
                 <constraint firstItem="tok-fM-BT4" firstAttribute="top" secondItem="KwA-FD-3xk" secondAttribute="bottom" constant="8" id="iCh-Gw-3Wu"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="top" secondItem="cMs-Oa-tjo" secondAttribute="bottom" constant="16" id="iDS-Wf-WQq"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iZf-uN-IYS"/>
                 <constraint firstItem="KwA-FD-3xk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ibh-EY-DaT"/>
-                <constraint firstItem="GcJ-CG-pk4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lQd-jZ-yem"/>
                 <constraint firstItem="Tsg-yY-uwK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nJw-62-JPU"/>
-                <constraint firstItem="GcJ-CG-pk4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zam-eY-JJL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

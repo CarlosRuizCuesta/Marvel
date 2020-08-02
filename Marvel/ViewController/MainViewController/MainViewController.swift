@@ -13,7 +13,7 @@ import Alamofire
 class MainViewController: UIViewController {
 
     @IBOutlet weak var searchBar : UISearchBar!
-    @IBOutlet weak var navigationBar : UINavigationBar!
+    //@IBOutlet weak var navigationBar : UINavigationBar!
     @IBOutlet weak var tblHeroes : UITableView!
     
     var selectedName : String!
@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
         searchBar.delegate = self
         tblHeroes.tableFooterView = UIView()
         tblHeroes.delegate = self
-        navigationBar.topItem?.title = "Marvel Heroes"
         getData()
         
         if let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
@@ -99,7 +98,16 @@ extension MainViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrHeroes.count
+        
+        let count = arrHeroes.count
+        
+        if count <= 0 {
+            tblHeroes.setNoDataPlaceholder("No hay favoritos")
+        } else {
+            tblHeroes.removeNoDataPlaceholder()
+        }
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
